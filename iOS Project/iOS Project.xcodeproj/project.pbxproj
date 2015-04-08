@@ -13,6 +13,9 @@
 		69ACE6CD1AD4921900AB9E4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69ACE6CC1AD4921900AB9E4D /* Images.xcassets */; };
 		69ACE6D01AD4921900AB9E4D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ACE6CE1AD4921900AB9E4D /* LaunchScreen.xib */; };
 		69ACE6DC1AD4921900AB9E4D /* iOS_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACE6DB1AD4921900AB9E4D /* iOS_ProjectTests.swift */; };
+		FDCD322B1AD49CCA0025199B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCD322A1AD49CCA0025199B /* UserView.swift */; };
+		FDCD322D1AD49CD50025199B /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCD322C1AD49CD50025199B /* HashtagView.swift */; };
+		FDCD322F1AD49CE30025199B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCD322E1AD49CE30025199B /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		69ACE6D51AD4921900AB9E4D /* iOS ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ACE6DA1AD4921900AB9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69ACE6DB1AD4921900AB9E4D /* iOS_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ProjectTests.swift; sourceTree = "<group>"; };
+		FDCD322A1AD49CCA0025199B /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		FDCD322C1AD49CD50025199B /* HashtagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
+		FDCD322E1AD49CE30025199B /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 				69ACE6C51AD4921900AB9E4D /* AppDelegate.swift */,
 				69ACE6C71AD4921900AB9E4D /* ViewController.swift */,
 				69ACE6C91AD4921900AB9E4D /* Main.storyboard */,
+				FDCD322A1AD49CCA0025199B /* UserView.swift */,
+				FDCD322C1AD49CD50025199B /* HashtagView.swift */,
+				FDCD322E1AD49CE30025199B /* HistoryView.swift */,
 				69ACE6CC1AD4921900AB9E4D /* Images.xcassets */,
 				69ACE6CE1AD4921900AB9E4D /* LaunchScreen.xib */,
 				69ACE6C31AD4921900AB9E4D /* Supporting Files */,
@@ -213,7 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				69ACE6C81AD4921900AB9E4D /* ViewController.swift in Sources */,
+				FDCD322B1AD49CCA0025199B /* UserView.swift in Sources */,
+				FDCD322F1AD49CE30025199B /* HistoryView.swift in Sources */,
 				69ACE6C61AD4921900AB9E4D /* AppDelegate.swift in Sources */,
+				FDCD322D1AD49CD50025199B /* HashtagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +417,7 @@
 				69ACE6E11AD4921A00AB9E4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69ACE6E21AD4921A00AB9E4D /* Build configuration list for PBXNativeTarget "iOS ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +426,7 @@
 				69ACE6E41AD4921A00AB9E4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
