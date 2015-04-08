@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		691ED2801AD5A0B0003495A0 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691ED27F1AD5A0B0003495A0 /* UserTableViewController.swift */; };
+		691ED2821AD5A0C1003495A0 /* HashtagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691ED2811AD5A0C1003495A0 /* HashtagTableViewController.swift */; };
 		6940AA5A1AD4D34500E2B0CE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6940AA571AD4D34500E2B0CE /* TwitterKit.framework */; };
 		6940AA5B1AD4D34600E2B0CE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6940AA581AD4D34500E2B0CE /* TwitterKitResources.bundle */; };
 		6940AA5C1AD4D34600E2B0CE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6940AA591AD4D34500E2B0CE /* Fabric.framework */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		691ED27F1AD5A0B0003495A0 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		691ED2811AD5A0C1003495A0 /* HashtagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagTableViewController.swift; sourceTree = "<group>"; };
 		6940AA571AD4D34500E2B0CE /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		6940AA581AD4D34500E2B0CE /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		6940AA591AD4D34500E2B0CE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				69ACE6CC1AD4921900AB9E4D /* Images.xcassets */,
 				69ACE6CE1AD4921900AB9E4D /* LaunchScreen.xib */,
 				69ACE6C31AD4921900AB9E4D /* Supporting Files */,
+				691ED27F1AD5A0B0003495A0 /* UserTableViewController.swift */,
+				691ED2811AD5A0C1003495A0 /* HashtagTableViewController.swift */,
 			);
 			path = "iOS Project";
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 			files = (
 				69ACE6C81AD4921900AB9E4D /* ViewController.swift in Sources */,
 				FDCD322B1AD49CCA0025199B /* UserView.swift in Sources */,
+				691ED2821AD5A0C1003495A0 /* HashtagTableViewController.swift in Sources */,
 				FDCD322F1AD49CE30025199B /* HistoryView.swift in Sources */,
 				69ACE6C61AD4921900AB9E4D /* AppDelegate.swift in Sources */,
+				691ED2801AD5A0B0003495A0 /* UserTableViewController.swift in Sources */,
 				FDCD322D1AD49CD50025199B /* HashtagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

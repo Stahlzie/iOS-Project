@@ -76,16 +76,16 @@
             </objects>
             <point key="canvasLocation" x="-828" y="1098"/>
         </scene>
-        <!--Table View Controller-->
+        <!--User Table View Controller-->
         <scene sceneID="Bpb-CC-rrM">
             <objects>
-                <tableViewController id="3e5-7f-G11" sceneMemberID="viewController">
+                <tableViewController id="3e5-7f-G11" customClass="UserTableViewController" customModule="iOS_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QTP-49-iwq">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kdF-v6-mDH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" id="kdF-v6-mDH">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kdF-v6-mDH" id="Cnp-lX-yKX">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -102,16 +102,16 @@
             </objects>
             <point key="canvasLocation" x="-774" y="1756"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Hashtag Table View Controller-->
         <scene sceneID="xlF-Pj-6WF">
             <objects>
-                <tableViewController id="hMU-3e-pYW" sceneMemberID="viewController">
+                <tableViewController id="hMU-3e-pYW" customClass="HashtagTableViewController" customModule="iOS_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2wc-9j-5pe">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KhN-Yk-HOO">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HashtagCell" id="KhN-Yk-HOO">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KhN-Yk-HOO" id="e1w-hI-4Xl">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -137,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8GT-lZ-mMR">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuserIdentifier" id="8GT-lZ-mMR">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8GT-lZ-mMR" id="Zjb-Bm-80f">
                                     <autoresizingMask key="autoresizingMask"/>
