@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6940AA5A1AD4D34500E2B0CE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6940AA571AD4D34500E2B0CE /* TwitterKit.framework */; };
+		6940AA5B1AD4D34600E2B0CE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6940AA581AD4D34500E2B0CE /* TwitterKitResources.bundle */; };
+		6940AA5C1AD4D34600E2B0CE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6940AA591AD4D34500E2B0CE /* Fabric.framework */; };
 		69ACE6C61AD4921900AB9E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACE6C51AD4921900AB9E4D /* AppDelegate.swift */; };
 		69ACE6C81AD4921900AB9E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACE6C71AD4921900AB9E4D /* ViewController.swift */; };
 		69ACE6CB1AD4921900AB9E4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69ACE6C91AD4921900AB9E4D /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6940AA571AD4D34500E2B0CE /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		6940AA581AD4D34500E2B0CE /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		6940AA591AD4D34500E2B0CE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		69ACE6C01AD4921900AB9E4D /* iOS Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ACE6C41AD4921900AB9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69ACE6C51AD4921900AB9E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6940AA5A1AD4D34500E2B0CE /* TwitterKit.framework in Frameworks */,
+				6940AA5C1AD4D34600E2B0CE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,9 @@
 		69ACE6B71AD4921900AB9E4D = {
 			isa = PBXGroup;
 			children = (
+				6940AA571AD4D34500E2B0CE /* TwitterKit.framework */,
+				6940AA581AD4D34500E2B0CE /* TwitterKitResources.bundle */,
+				6940AA591AD4D34500E2B0CE /* Fabric.framework */,
 				69ACE6C21AD4921900AB9E4D /* iOS Project */,
 				69ACE6D81AD4921900AB9E4D /* iOS ProjectTests */,
 				69ACE6C11AD4921900AB9E4D /* Products */,
@@ -122,6 +133,7 @@
 				69ACE6BC1AD4921900AB9E4D /* Sources */,
 				69ACE6BD1AD4921900AB9E4D /* Frameworks */,
 				69ACE6BE1AD4921900AB9E4D /* Resources */,
+				6940AA561AD4A33200E2B0CE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -192,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6940AA5B1AD4D34600E2B0CE /* TwitterKitResources.bundle in Resources */,
 				69ACE6CB1AD4921900AB9E4D /* Main.storyboard in Resources */,
 				69ACE6D01AD4921900AB9E4D /* LaunchScreen.xib in Resources */,
 				69ACE6CD1AD4921900AB9E4D /* Images.xcassets in Resources */,
@@ -206,6 +219,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6940AA561AD4A33200E2B0CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 48a6677d02c4c7e822414430b1febd47d3202fa8 4729838bf17738341f24d13d0ebf7975be92d54576c06a677ef49995078dd46d";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69ACE6BC1AD4921900AB9E4D /* Sources */ = {
@@ -336,6 +365,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "iOS Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +379,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "iOS Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,6 +442,7 @@
 				69ACE6E11AD4921A00AB9E4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69ACE6E21AD4921A00AB9E4D /* Build configuration list for PBXNativeTarget "iOS ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +451,7 @@
 				69ACE6E41AD4921A00AB9E4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
