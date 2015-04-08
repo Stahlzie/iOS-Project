@@ -70,14 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		69ACE6B71AD4921900AB9E4D = {
+		69909DEC1AD5899300BF2BFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6940AA571AD4D34500E2B0CE /* TwitterKit.framework */,
 				6940AA581AD4D34500E2B0CE /* TwitterKitResources.bundle */,
 				6940AA591AD4D34500E2B0CE /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69ACE6B71AD4921900AB9E4D = {
+			isa = PBXGroup;
+			children = (
 				69ACE6C21AD4921900AB9E4D /* iOS Project */,
 				69ACE6D81AD4921900AB9E4D /* iOS ProjectTests */,
+				69909DEC1AD5899300BF2BFA /* Frameworks */,
 				69ACE6C11AD4921900AB9E4D /* Products */,
 			);
 			sourceTree = "<group>";

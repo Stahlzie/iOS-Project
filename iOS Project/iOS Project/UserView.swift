@@ -7,13 +7,33 @@
 //
 
 import UIKit
+import TwitterKit
 
 class UserView: UIViewController {
-
+    
+    var tweetView = TWTRTweetView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        Twitter.sharedInstance().logInGuestWithCompletion { session, error in
+            if let validSession = session {
+                Twitter.sharedInstance().APIClient.loadTweetWithID("20") { tweet, error in
+                    if let t = tweet {
+                        self.tweetView.configureWithTweet(t)
+                        NSLog("Description: " + t.description)
+                        NSLog("/n/n")
+                        NSLog("Favorite Count: " + t.favoriteCount.description)
+                        NSLog("Retweet Count: " + t.retweetCount.description)
+                    } else {
+                        NSLog("Failed to load Tweet: \(error.localizedDescription)")
+                    }
+                }
+            } else {
+                NSLog("Unable to login as guest: \(error.localizedDescription)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
