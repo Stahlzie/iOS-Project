@@ -14,6 +14,7 @@ class HashtagTableViewController : UITableViewController, TWTRTweetViewDelegate 
     // Hold all the loaded Tweets
     var tweets: [TWTRTweet] = [] {
         didSet {
+            tweets.sort{ $0.0.retweetCount > $1.retweetCount }
             tableView.reloadData()
         }
     }
@@ -44,7 +45,7 @@ class HashtagTableViewController : UITableViewController, TWTRTweetViewDelegate 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let tweet = tweets[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier(tweetTableReuseIdentifier, forIndexPath: indexPath) as TWTRTweetTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(tweetTableReuseIdentifier, forIndexPath: indexPath) as! TWTRTweetTableViewCell
         cell.configureWithTweet(tweet)
         cell.tweetView.delegate = self
         return cell
@@ -79,11 +80,11 @@ class HashtagTableViewController : UITableViewController, TWTRTweetViewDelegate 
                                 NSLog(JSONError.description)
                             } else {
                                 // Make the JSON data a dictionary.
-                                let jsonDictionary = jsonData as [String:AnyObject]
+                                let jsonDictionary = jsonData as! [String:AnyObject]
                                 
                                 // Extract the Tweets and create Tweet objects from the JSON data.
-                                let jsonTweets = jsonDictionary["statuses"] as NSArray
-                                let resultTweets = TWTRTweet.tweetsWithJSONArray(jsonTweets) as [TWTRTweet]
+                                let jsonTweets = jsonDictionary["statuses"] as! NSArray
+                                let resultTweets = TWTRTweet.tweetsWithJSONArray(jsonTweets as [AnyObject]) as! [TWTRTweet]
                                 
                                 self.tweets =  resultTweets
                             }

@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import TwitterKit
+//import TwitterKit
 
 class UserView: UIViewController {
     
-    var tweetView = TWTRTweetView()
+//    var tweetView = TWTRTweetView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,6 +14,7 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
     // Hold all the loaded Tweets
     var tweets: [TWTRTweet] = [] {
         didSet {
+            tweets.sort{ $0.0.retweetCount > $1.retweetCount }
             tableView.reloadData()
         }
     }
@@ -35,6 +36,8 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
         
         //LoadTweets
         userToSearch = "verge"
+        
+        //TWTRTweetView.appearance().theme = .Light
     }
     
     // MARK: UITableViewDelegate Methods
@@ -44,7 +47,7 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let tweet = tweets[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier(tweetTableReuseIdentifier, forIndexPath: indexPath) as TWTRTweetTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(tweetTableReuseIdentifier, forIndexPath: indexPath) as! TWTRTweetTableViewCell
         cell.configureWithTweet(tweet)
         cell.tweetView.delegate = self
         return cell
@@ -58,9 +61,10 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
     private func searchTweetsByUser() -> Void {
         Twitter.sharedInstance().logInGuestWithCompletion { session, error in
             if let validSession = session {
-                let statusesShowEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
+                //let statusesShowEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
+                let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
                 var params = Dictionary<String,String>()
-                params["q"] = "@"+self.userToSearch
+                params["screen_name"] = self.userToSearch
                 //params["count"] = "50"
                 var clientError : NSError?
                 
@@ -78,12 +82,9 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
                             if let JSONError = maybeJSONError {
                                 NSLog(JSONError.description)
                             } else {
-                                // Make the JSON data a dictionary.
-                                let jsonDictionary = jsonData as [String:AnyObject]
-                                
                                 // Extract the Tweets and create Tweet objects from the JSON data.
-                                let jsonTweets = jsonDictionary["statuses"] as NSArray
-                                let resultTweets = TWTRTweet.tweetsWithJSONArray(jsonTweets) as [TWTRTweet]
+                                let jsonTweets = jsonData as! NSArray
+                                let resultTweets = TWTRTweet.tweetsWithJSONArray(jsonTweets as [AnyObject]) as! [TWTRTweet]
                                 
                                 self.tweets =  resultTweets
                             }
