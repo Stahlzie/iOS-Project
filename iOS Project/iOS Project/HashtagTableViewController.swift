@@ -62,6 +62,9 @@ class HashtagTableViewController : UITableViewController, TWTRTweetViewDelegate 
                 let statusesShowEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
                 var params = Dictionary<String,String>()
                 params["q"] = "#"+self.hashtagToSearch
+                params["include_rts"] = "false"
+                params["count"] = "50"
+                params["result_type"] = "popular"
                 //params["count"] = "50"
                 var clientError : NSError?
                 

@@ -8,10 +8,21 @@
 
 import UIKit
 
-class HashtagView: UIViewController {
+class HashtagView: UIViewController, UISearchBarDelegate{
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var container: UIView!
+    
+    var childTable : HashtagTableViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        
+        childTable = self.childViewControllers[0] as! HashtagTableViewController
+
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +31,34 @@ class HashtagView: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        childTable.hashtagToSearch = searchBar.text
+        searchBar.resignFirstResponder()
+        container.hidden = false
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.container.hidden = true
+        
+        // Create a button bar for the number pad
+        let keyboardDoneButtonView = UIToolbar()
+        keyboardDoneButtonView.sizeToFit()
+        
+        // Setup the buttons to be put in the system.
+        let item = UIBarButtonItem(title: "Dismiss", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("endEditingNow") )
+        var toolbarButtons = [item]
+        
+        //Put the buttons into the ToolBar and display the tool bar
+        keyboardDoneButtonView.setItems(toolbarButtons, animated: false)
+        searchBar.inputAccessoryView = keyboardDoneButtonView
+    }
+    
+    func endEditingNow() {
+        searchBar.resignFirstResponder()
+        container.hidden = false
+    }
+
     
 
     /*

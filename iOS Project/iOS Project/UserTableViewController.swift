@@ -23,9 +23,13 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
         didSet {
             if(oldValue != userToSearch) {
                 searchTweetsByUser()
+                
             }
         }
     }
+    
+    var labels:[UILabel] = []
+    var firstTimeRan : [Bool]!
     
     override func viewDidLoad() {
         // Setup the table view
@@ -36,6 +40,18 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
         
         //LoadTweets
         userToSearch = "verge"
+        
+        labels.reserveCapacity(50)
+        //firstTimeRan.reserveCapacity(50)
+        let label = UILabel()
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        label.textColor = UIColor.blackColor()
+        for i in 0...50 {
+            labels.append(label)
+            //firstTimeRan[i] = true
+        }
+        
+        //tableView.hidden = true
         
         //TWTRTweetView.appearance().theme = .Light
     }
@@ -50,12 +66,44 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier(tweetTableReuseIdentifier, forIndexPath: indexPath) as! TWTRTweetTableViewCell
         cell.configureWithTweet(tweet)
         cell.tweetView.delegate = self
+        
+        
+        //self.labels[indexPath.row].removeFromSuperview()
+        
+        
+        //add our own retweet count label to the cell
+        
+        //var lab = UILabel()
+//        if firstTimeRan[indexPath.row] {
+//            labels[indexPath.row].frame = CGRectMake(10, cell.frame.size.height/2, 30, 20)
+//            
+//            cell.addSubview(labels[indexPath.row])
+//            labels[indexPath.row].tag = 101
+//            firstTimeRan[indexPath.row] = false
+//        } else {
+//            lab = labels[indexPath.row].viewWithTag(101)
+//        }
+//        lab.text = tweet.retweetCount.description
+        
+        //cell.addSubview(labels[indexPath.row])
+        
+        
+        
+        //this worked, but was pushing the tweet off the screen:
+        //cell.textLabel!.text = tweet.retweetCount.description
+        //        cell.textLabel!.frame = CGRectMake(10, cell.frame.size.height/2, 30, 20)
+        
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let tweet = tweets[indexPath.row]
         return TWTRTweetTableViewCell.heightForTweet(tweet, width: CGRectGetWidth(self.view.bounds))
+    }
+    
+    
+    //COULD POTENTIALLY USE THIS LATER TO DO STUFF
+    func tweetView(tweetView: TWTRTweetView!, didSelectTweet tweet: TWTRTweet!) {
     }
     
     private func searchTweetsByUser() -> Void {
@@ -65,7 +113,9 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
                 let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
                 var params = Dictionary<String,String>()
                 params["screen_name"] = self.userToSearch
-                //params["count"] = "50"
+                params["include_rts"] = "false"
+                params["count"] = "50"
+                params["result_type"] = "popular"
                 var clientError : NSError?
                 
                 let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: statusesShowEndpoint, parameters: params, error: &clientError)
@@ -87,6 +137,12 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate {
                                 let resultTweets = TWTRTweet.tweetsWithJSONArray(jsonTweets as [AnyObject]) as! [TWTRTweet]
                                 
                                 self.tweets =  resultTweets
+                                
+//                                self.labels.removeAll(keepCapacity: false)
+//                                for tweet in resultTweets {
+//                                    self.labels.append(UILabel())
+//                                }
+                                //self.labels.reserveCapacity(resultTweets.count)
                             }
                         }
                         else {

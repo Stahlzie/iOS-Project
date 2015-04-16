@@ -33,7 +33,7 @@
                         <viewControllerLayoutGuide type="top" id="jLK-Vg-y2t"/>
                         <viewControllerLayoutGuide type="bottom" id="fRe-mM-uaw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Aui-eK-Fbe">
+                    <view key="view" contentMode="scaleToFill" id="Aui-eK-Fbe" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -61,6 +61,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="User" id="Gph-W7-LIq"/>
                     <connections>
+                        <outlet property="container" destination="hgH-Wq-8gT" id="Jhp-wo-JTf"/>
+                        <outlet property="searchBar" destination="U8j-3m-qS7" id="Rzl-95-cZa"/>
                         <outlet property="searchDisplayController" destination="gXV-qo-uAY" id="Xsa-A4-xQI"/>
                     </connections>
                 </viewController>
@@ -190,6 +192,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hashtag" id="EyG-Kj-km3"/>
+                    <connections>
+                        <outlet property="container" destination="30V-Mq-Kba" id="euP-WQ-N9Z"/>
+                        <outlet property="searchBar" destination="ZFH-eY-lYD" id="RvY-kO-jxW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bpq-BY-G0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -88,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				69ACE6C21AD4921900AB9E4D /* iOS Project */,
+				FDFA54891ADF347500443CC8 /* misc */,
 				69ACE6D81AD4921900AB9E4D /* iOS ProjectTests */,
 				69909DEC1AD5899300BF2BFA /* Frameworks */,
 				69ACE6C11AD4921900AB9E4D /* Products */,
@@ -106,15 +107,11 @@
 		69ACE6C21AD4921900AB9E4D /* iOS Project */ = {
 			isa = PBXGroup;
 			children = (
-				69ACE6C51AD4921900AB9E4D /* AppDelegate.swift */,
-				69ACE6C71AD4921900AB9E4D /* ViewController.swift */,
 				69ACE6C91AD4921900AB9E4D /* Main.storyboard */,
+				69ACE6C71AD4921900AB9E4D /* ViewController.swift */,
 				FDCD322A1AD49CCA0025199B /* UserView.swift */,
 				FDCD322C1AD49CD50025199B /* HashtagView.swift */,
 				FDCD322E1AD49CE30025199B /* HistoryView.swift */,
-				69ACE6CC1AD4921900AB9E4D /* Images.xcassets */,
-				69ACE6CE1AD4921900AB9E4D /* LaunchScreen.xib */,
-				69ACE6C31AD4921900AB9E4D /* Supporting Files */,
 				691ED27F1AD5A0B0003495A0 /* UserTableViewController.swift */,
 				691ED2811AD5A0C1003495A0 /* HashtagTableViewController.swift */,
 			);
@@ -144,6 +141,18 @@
 				69ACE6DA1AD4921900AB9E4D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDFA54891ADF347500443CC8 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				69ACE6C51AD4921900AB9E4D /* AppDelegate.swift */,
+				69ACE6CC1AD4921900AB9E4D /* Images.xcassets */,
+				69ACE6CE1AD4921900AB9E4D /* LaunchScreen.xib */,
+				69ACE6C31AD4921900AB9E4D /* Supporting Files */,
+			);
+			name = misc;
+			path = "iOS Project";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

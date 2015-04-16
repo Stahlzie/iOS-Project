@@ -9,14 +9,27 @@
 import UIKit
 //import TwitterKit
 
-class UserView: UIViewController {
+class UserView: UIViewController, UISearchBarDelegate {
     
 //    var tweetView = TWTRTweetView()
+    
+    @IBOutlet weak var container: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    //var searchActive : Bool!
+    //var searchString : String!
+    var childTable : UserTableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        searchBar.delegate = self
+        
+        //searchActive = false
+        //searchString = ""
+        
+        childTable = self.childViewControllers[0] as! UserTableViewController
+        
 //        Twitter.sharedInstance().logInGuestWithCompletion { session, error in
 //            if let validSession = session {
 //                Twitter.sharedInstance().APIClient.loadTweetWithID("20") { tweet, error in
@@ -34,6 +47,33 @@ class UserView: UIViewController {
 //                NSLog("Unable to login as guest: \(error.localizedDescription)")
 //            }
 //        }
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        childTable.userToSearch = searchBar.text
+        searchBar.resignFirstResponder()
+        container.hidden = false
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.container.hidden = true
+        
+        // Create a button bar for the number pad
+        let keyboardDoneButtonView = UIToolbar()
+        keyboardDoneButtonView.sizeToFit()
+        
+        // Setup the buttons to be put in the system.
+        let item = UIBarButtonItem(title: "Dismiss", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("endEditingNow") )
+        var toolbarButtons = [item]
+        
+        //Put the buttons into the ToolBar and display the tool bar
+        keyboardDoneButtonView.setItems(toolbarButtons, animated: false)
+        searchBar.inputAccessoryView = keyboardDoneButtonView
+    }
+    
+    func endEditingNow() {
+        searchBar.resignFirstResponder()
+        container.hidden = false
     }
 
     override func didReceiveMemoryWarning() {
