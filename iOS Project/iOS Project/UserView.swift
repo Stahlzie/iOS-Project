@@ -7,56 +7,50 @@
 //
 
 import UIKit
-//import TwitterKit
 
 class UserView: UIViewController, UISearchBarDelegate {
-    
-//    var tweetView = TWTRTweetView()
     
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    //var searchActive : Bool!
-    //var searchString : String!
     var childTable : UserTableViewController!
+    
+    var labelsThatWereVisible : [UILabel] = []
+    
+    var topTwitterAccounts : [String] = ["katyperry", "justinbieber", "barackobama", "taylorswift13", "jtimberlake", "theellenshow", "cristiano", "kimkardashian", "cnnbrk", "jimmyfallon", "billgates", "kingjames", "espn", "conanobrien", "nytimes", "nba", "facebook", "leodicaprio", "kanyewest", "google"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         searchBar.delegate = self
         
-        //searchActive = false
-        //searchString = ""
-        
         childTable = self.childViewControllers[0] as! UserTableViewController
-        
-//        Twitter.sharedInstance().logInGuestWithCompletion { session, error in
-//            if let validSession = session {
-//                Twitter.sharedInstance().APIClient.loadTweetWithID("20") { tweet, error in
-//                    if let t = tweet {
-//                        self.tweetView.configureWithTweet(t)
-//                        NSLog("Description: " + t.description)
-//                        NSLog("/n/n")
-//                        NSLog("Favorite Count: " + t.favoriteCount.description)
-//                        NSLog("Retweet Count: " + t.retweetCount.description)
-//                    } else {
-//                        NSLog("Failed to load Tweet: \(error.localizedDescription)")
-//                    }
-//                }
-//            } else {
-//                NSLog("Unable to login as guest: \(error.localizedDescription)")
-//            }
-//        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var child = segue.destinationViewController as! UserTableViewController
+        child.parent = self
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         childTable.userToSearch = searchBar.text
         searchBar.resignFirstResponder()
         container.hidden = false
+        labelsThatWereVisible = []
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         self.container.hidden = true
+        //stops scrolling
+        childTable.tableView.setContentOffset(childTable.tableView.contentOffset, animated: false)
+        
+        //hides the retweet labels
+        for label in childTable.labels {
+            if label.hidden == false {
+                labelsThatWereVisible.append(label)
+                label.hidden = true
+            }
+        }
         
         // Create a button bar for the number pad
         let keyboardDoneButtonView = UIToolbar()
@@ -74,6 +68,10 @@ class UserView: UIViewController, UISearchBarDelegate {
     func endEditingNow() {
         searchBar.resignFirstResponder()
         container.hidden = false
+        for label in labelsThatWereVisible {
+            label.hidden = false
+        }
+        labelsThatWereVisible = []
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,15 +79,15 @@ class UserView: UIViewController, UISearchBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //allows the view controller to respond to motion events
+    override func canBecomeFirstResponder() -> Bool {
+        return true
     }
-    */
-
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if motion == .MotionShake {
+            let randomIndex = Int(arc4random_uniform(UInt32(topTwitterAccounts.count)))
+            childTable.userToSearch = topTwitterAccounts[randomIndex]
+        }
+    }
 }

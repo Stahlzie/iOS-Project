@@ -8,13 +8,14 @@
 
 import UIKit
 
-class HashtagView: UIViewController, UISearchBarDelegate{
-
-    @IBOutlet weak var searchBar: UISearchBar!
+class HashtagView: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var container: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var childTable : HashtagTableViewController!
+    
+    var labelsThatWereVisible : [UILabel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,24 +23,32 @@ class HashtagView: UIViewController, UISearchBarDelegate{
         searchBar.delegate = self
         
         childTable = self.childViewControllers[0] as! HashtagTableViewController
-
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var child = segue.destinationViewController as! HashtagTableViewController
+        child.parent = self
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         childTable.hashtagToSearch = searchBar.text
         searchBar.resignFirstResponder()
         container.hidden = false
+        labelsThatWereVisible = []
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         self.container.hidden = true
+        //stops scrolling
+        childTable.tableView.setContentOffset(childTable.tableView.contentOffset, animated: false)
+        
+        //hides the retweet labels
+        for label in childTable.labels {
+            if label.hidden == false {
+                labelsThatWereVisible.append(label)
+                label.hidden = true
+            }
+        }
         
         // Create a button bar for the number pad
         let keyboardDoneButtonView = UIToolbar()
@@ -57,18 +66,16 @@ class HashtagView: UIViewController, UISearchBarDelegate{
     func endEditingNow() {
         searchBar.resignFirstResponder()
         container.hidden = false
+        for label in labelsThatWereVisible {
+            label.hidden = false
+        }
+        labelsThatWereVisible = []
     }
-
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    */
+
 
 }

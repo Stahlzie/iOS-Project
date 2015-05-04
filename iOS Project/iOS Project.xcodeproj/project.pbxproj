@@ -13,14 +13,18 @@
 		6940AA5B1AD4D34600E2B0CE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6940AA581AD4D34500E2B0CE /* TwitterKitResources.bundle */; };
 		6940AA5C1AD4D34600E2B0CE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6940AA591AD4D34500E2B0CE /* Fabric.framework */; };
 		69ACE6C61AD4921900AB9E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACE6C51AD4921900AB9E4D /* AppDelegate.swift */; };
-		69ACE6C81AD4921900AB9E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACE6C71AD4921900AB9E4D /* ViewController.swift */; };
 		69ACE6CB1AD4921900AB9E4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69ACE6C91AD4921900AB9E4D /* Main.storyboard */; };
 		69ACE6CD1AD4921900AB9E4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69ACE6CC1AD4921900AB9E4D /* Images.xcassets */; };
 		69ACE6D01AD4921900AB9E4D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ACE6CE1AD4921900AB9E4D /* LaunchScreen.xib */; };
 		69ACE6DC1AD4921900AB9E4D /* iOS_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACE6DB1AD4921900AB9E4D /* iOS_ProjectTests.swift */; };
+		FD46C9DD1AF2F0C6005E50E5 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD46C9DC1AF2F0C6005E50E5 /* HistoryTableViewController.swift */; };
+		FD46C9DF1AF2F227005E50E5 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD46C9DE1AF2F227005E50E5 /* HistoryView.swift */; };
+		FD46C9E11AF2F779005E50E5 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD46C9E01AF2F779005E50E5 /* HistoryCell.swift */; };
+		FD46C9E51AF5B19C005E50E5 /* Hashtag-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FD46C9E41AF5B19C005E50E5 /* Hashtag-50.png */; };
+		FD46C9E91AF5B36F005E50E5 /* Email-32.png in Resources */ = {isa = PBXBuildFile; fileRef = FD46C9E81AF5B36F005E50E5 /* Email-32.png */; };
+		FD46C9EB1AF6A94C005E50E5 /* DetailedTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD46C9EA1AF6A94C005E50E5 /* DetailedTweetView.swift */; };
 		FDCD322B1AD49CCA0025199B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCD322A1AD49CCA0025199B /* UserView.swift */; };
 		FDCD322D1AD49CD50025199B /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCD322C1AD49CD50025199B /* HashtagView.swift */; };
-		FDCD322F1AD49CE30025199B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCD322E1AD49CE30025199B /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,16 +46,20 @@
 		69ACE6C01AD4921900AB9E4D /* iOS Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ACE6C41AD4921900AB9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69ACE6C51AD4921900AB9E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69ACE6C71AD4921900AB9E4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69ACE6CA1AD4921900AB9E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69ACE6CC1AD4921900AB9E4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69ACE6CF1AD4921900AB9E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		69ACE6D51AD4921900AB9E4D /* iOS ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ACE6DA1AD4921900AB9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69ACE6DB1AD4921900AB9E4D /* iOS_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ProjectTests.swift; sourceTree = "<group>"; };
+		FD46C9DC1AF2F0C6005E50E5 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		FD46C9DE1AF2F227005E50E5 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryView.swift; path = ../HistoryView.swift; sourceTree = "<group>"; };
+		FD46C9E01AF2F779005E50E5 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		FD46C9E41AF5B19C005E50E5 /* Hashtag-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hashtag-50.png"; path = "iOS Project/Hashtag-50.png"; sourceTree = "<group>"; };
+		FD46C9E81AF5B36F005E50E5 /* Email-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email-32.png"; sourceTree = "<group>"; };
+		FD46C9EA1AF6A94C005E50E5 /* DetailedTweetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedTweetView.swift; sourceTree = "<group>"; };
 		FDCD322A1AD49CCA0025199B /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		FDCD322C1AD49CD50025199B /* HashtagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
-		FDCD322E1AD49CE30025199B /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,8 @@
 		69ACE6B71AD4921900AB9E4D = {
 			isa = PBXGroup;
 			children = (
+				FD46C9E81AF5B36F005E50E5 /* Email-32.png */,
+				FD46C9E41AF5B19C005E50E5 /* Hashtag-50.png */,
 				69ACE6C21AD4921900AB9E4D /* iOS Project */,
 				FDFA54891ADF347500443CC8 /* misc */,
 				69ACE6D81AD4921900AB9E4D /* iOS ProjectTests */,
@@ -108,10 +118,12 @@
 			isa = PBXGroup;
 			children = (
 				69ACE6C91AD4921900AB9E4D /* Main.storyboard */,
-				69ACE6C71AD4921900AB9E4D /* ViewController.swift */,
-				FDCD322A1AD49CCA0025199B /* UserView.swift */,
+				FD46C9EA1AF6A94C005E50E5 /* DetailedTweetView.swift */,
+				FD46C9E01AF2F779005E50E5 /* HistoryCell.swift */,
 				FDCD322C1AD49CD50025199B /* HashtagView.swift */,
-				FDCD322E1AD49CE30025199B /* HistoryView.swift */,
+				FD46C9DE1AF2F227005E50E5 /* HistoryView.swift */,
+				FD46C9DC1AF2F0C6005E50E5 /* HistoryTableViewController.swift */,
+				FDCD322A1AD49CCA0025199B /* UserView.swift */,
 				691ED27F1AD5A0B0003495A0 /* UserTableViewController.swift */,
 				691ED2811AD5A0C1003495A0 /* HashtagTableViewController.swift */,
 			);
@@ -239,7 +251,9 @@
 				6940AA5B1AD4D34600E2B0CE /* TwitterKitResources.bundle in Resources */,
 				69ACE6CB1AD4921900AB9E4D /* Main.storyboard in Resources */,
 				69ACE6D01AD4921900AB9E4D /* LaunchScreen.xib in Resources */,
+				FD46C9E91AF5B36F005E50E5 /* Email-32.png in Resources */,
 				69ACE6CD1AD4921900AB9E4D /* Images.xcassets in Resources */,
+				FD46C9E51AF5B19C005E50E5 /* Hashtag-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,10 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69ACE6C81AD4921900AB9E4D /* ViewController.swift in Sources */,
+				FD46C9DD1AF2F0C6005E50E5 /* HistoryTableViewController.swift in Sources */,
+				FD46C9DF1AF2F227005E50E5 /* HistoryView.swift in Sources */,
+				FD46C9E11AF2F779005E50E5 /* HistoryCell.swift in Sources */,
+				FD46C9EB1AF6A94C005E50E5 /* DetailedTweetView.swift in Sources */,
 				FDCD322B1AD49CCA0025199B /* UserView.swift in Sources */,
 				691ED2821AD5A0C1003495A0 /* HashtagTableViewController.swift in Sources */,
-				FDCD322F1AD49CE30025199B /* HistoryView.swift in Sources */,
 				69ACE6C61AD4921900AB9E4D /* AppDelegate.swift in Sources */,
 				691ED2801AD5A0B0003495A0 /* UserTableViewController.swift in Sources */,
 				FDCD322D1AD49CD50025199B /* HashtagView.swift in Sources */,
