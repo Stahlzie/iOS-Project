@@ -17,7 +17,7 @@ class UserView: UIViewController, UISearchBarDelegate {
     
     var labelsThatWereVisible : [UILabel] = []
     
-    var topTwitterAccounts : [String] = ["katyperry", "justinbieber", "barackobama", "taylorswift13", "jtimberlake", "theellenshow", "cristiano", "kimkardashian", "cnnbrk", "jimmyfallon", "billgates", "kingjames", "espn", "conanobrien", "nytimes", "nba", "facebook", "leodicaprio", "kanyewest", "google"]
+    var topTwitterAccounts : [String] = ["katyperry", "justinbieber", "barackobama", "taylorswift13", "jtimberlake", "theellenshow", "cristiano", "kimkardashian", "cnnbrk", "jimmyfallon", "billgates", "kingjames", "espn", "conanobrien", "nytimes", "nba", "facebook", "leodicaprio", "kanyewest", "google", "stephenathome", "nfl", "mcuban", "neymarjr", "gordonramsay", "oprah"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
