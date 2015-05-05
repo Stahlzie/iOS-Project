@@ -24,7 +24,7 @@ class HashtagTableViewController: UITableViewController, TWTRTweetViewDelegate, 
         tableView.registerClass(TWTRTweetTableViewCell.self, forCellReuseIdentifier: tweetTableReuseIdentifier)
         
         //Default hashtag to search
-        hashtagToSearch = "yolo"
+        hashtagToSearch = "twitter"
     }
     
     let tweetTableReuseIdentifier = "HashtagCell"
@@ -134,9 +134,9 @@ class HashtagTableViewController: UITableViewController, TWTRTweetViewDelegate, 
             if let validSession = session {
                 let statusesShowEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
                 var params = Dictionary<String,String>()
-                params["q"] = "#"+self.hashtagToSearch
-                params["include_rts"] = "false"
-                params["count"] = "50"
+                params["q"] = "#"+self.hashtagToSearch+" -RT" // the "- RT" string is what filters out retweets, which is redundant info for our purposes"
+                //params["include_rts"] = "false"
+                params["count"] = "200"
                 params["result_type"] = "popular"
                 //params["count"] = "50"
                 var clientError : NSError?

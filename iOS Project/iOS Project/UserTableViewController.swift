@@ -24,7 +24,7 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate, Chi
         tableView.registerClass(TWTRTweetTableViewCell.self, forCellReuseIdentifier: tweetTableReuseIdentifier)
         
         //Default user to search
-        userToSearch = "verge"
+        userToSearch = "twitter"
     }
     
     let tweetTableReuseIdentifier = "UserCell"
@@ -136,7 +136,7 @@ class UserTableViewController: UITableViewController, TWTRTweetViewDelegate, Chi
                 var params = Dictionary<String,String>()
                 params["screen_name"] = self.userToSearch
                 params["include_rts"] = "false"
-                params["count"] = "50"
+                params["count"] = "100"
                 params["result_type"] = "popular"
                 var clientError : NSError?
                 
