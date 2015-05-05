@@ -88,6 +88,7 @@ class UserView: UIViewController, UISearchBarDelegate {
         if motion == .MotionShake {
             let randomIndex = Int(arc4random_uniform(UInt32(topTwitterAccounts.count)))
             childTable.userToSearch = topTwitterAccounts[randomIndex]
+            searchBar.text = ""
         }
     }
 }
